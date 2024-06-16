@@ -3,6 +3,7 @@ import UserNavbar from '../components/UserNavbar';
 import Slider from '../components/Slider';
 import SimpleSteps from '../components/SimpleSteps';
 import Footer from '../components/Footer';
+import '../css/stretchedPage.css';
 
 const UserHome = () => {
     return (

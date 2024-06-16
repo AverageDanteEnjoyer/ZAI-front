@@ -3,6 +3,7 @@ import UserNavbar from '../components/UserNavbar';
 import CartTable from '../components/CartTable';
 import Footer from '../components/Footer';
 import { getAll } from '../services/TicketOfferService';
+import '../css/stretchedPage.css';
 
 const Cart = () => {
     const [ticketOffers, setTicketOffers] = useState([]);

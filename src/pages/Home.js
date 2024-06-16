@@ -3,6 +3,7 @@ import Navbar from '../components/Navbar';
 import Slider from '../components/Slider';
 import SimpleSteps from '../components/SimpleSteps';
 import Footer from '../components/Footer';
+import '../css/stretchedPage.css';
 
 const Home = () => {
     return (

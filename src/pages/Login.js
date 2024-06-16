@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import Navbar from '../components/Navbar';
 import Alert from '../components/Alert';
-import Footer from '../components/Footer';
-import { login } from '../services/UserService';
+import { login } from '../services/AuthService';
 import '../css/login.css';
 
 const Login = () => {
@@ -13,10 +12,9 @@ const Login = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const user = await login({ email, password });
+            const user = await login({ email, hashedPassword:password });
             if (user) {
-                localStorage.setItem('user', JSON.stringify(user.data));
-                window.location.href = '/';
+                window.location.href = '/user-home';
             } else {
                 setAlert({ type: 'error', message: 'Invalid credentials' });
             }
@@ -27,7 +25,7 @@ const Login = () => {
 
     return (
         <div id="page">
-            <Navbar />
+            <Navbar></Navbar>
             <div className="form-frame">
                 <div className="form-style" style={{ width: '500px' }}>
                     <div className="form-style-heading">Zaloguj się</div>

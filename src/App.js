@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
+import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
 import Home from './pages/Home';
 import Login from './pages/Login';
 import Registration from './pages/Registration';
@@ -8,18 +8,28 @@ import Cart from './pages/Cart';
 import EditOffers from './pages/EditOffers';
 import UserHome from './pages/UserHome';
 import UserTickets from './pages/UserTickets';
+import { isAuthenticated, isAdmin, getCurrentUser } from './services/AuthService';
+import './css/fonts.css';
+import './css/registration.css';
 import './css/global.css'
-import './css/fonts.css'
+
+const ProtectedRoute = ({ children }) => {
+    return isAuthenticated() ? children : <Navigate to="/login" />;
+};
+
+const AdminRoute = ({ children }) => {
+    return isAuthenticated() && isAdmin() ? children : <Navigate to="/login" />;
+};
 
 const App = () => {
     const [isLoggedIn, setIsLoggedIn] = useState(false);
-    const [isAdmin, setIsAdmin] = useState(false);
+    const [admin, setAdmin] = useState(false);
 
     useEffect(() => {
-        const user = JSON.parse(localStorage.getItem('user'));
+        const user = getCurrentUser();
         if (user) {
             setIsLoggedIn(true);
-            setIsAdmin(user.isAdmin);
+            setAdmin(user.isAdmin);
         }
     }, []);
 
@@ -30,13 +40,31 @@ const App = () => {
                 <Route path="/login" element={<Login />} />
                 <Route path="/registration" element={<Registration />} />
                 <Route path="/offers" element={<Offers />} />
-                <Route path="/cart" element={<Cart />} />
-                <Route path="/edit-offers" element={<EditOffers />} />
-                <Route path="/user-home" element={<UserHome />} />
-                <Route path="/user-tickets" element={<UserTickets />} />
+                <Route path="/cart" element={
+                    <ProtectedRoute>
+                        <Cart />
+                    </ProtectedRoute>
+                } />
+                <Route path="/edit-offers" element={
+                    <AdminRoute>
+                        <EditOffers />
+                    </AdminRoute>
+                } />
+                <Route path="/user-home" element={
+                    <ProtectedRoute>
+                        <UserHome />
+                    </ProtectedRoute>
+                } />
+                <Route path="/user-tickets" element={
+                    <ProtectedRoute>
+                        <UserTickets />
+                    </ProtectedRoute>
+                } />
             </Routes>
         </Router>
     );
 };
 
 export default App;
+
+

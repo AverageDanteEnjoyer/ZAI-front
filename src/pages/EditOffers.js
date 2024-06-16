@@ -4,6 +4,7 @@ import AddOfferForm from '../components/AddOfferForm';
 import DataGrid from '../components/DataGrid';
 import Footer from '../components/Footer';
 import { getAll, remove, create } from '../services/TicketOfferService';
+import '../css/stretchedPage.css';
 
 const EditOffers = () => {
     const [ticketOffers, setTicketOffers] = useState([]);

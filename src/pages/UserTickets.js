@@ -3,6 +3,7 @@ import UserNavbar from '../components/UserNavbar';
 import TicketsTable from '../components/TicketsTable';
 import Footer from '../components/Footer';
 import { getAll } from '../services/TicketOfferService';
+import '../css/stretchedPage.css';
 
 const UserTickets = () => {
     const [tickets, setTickets] = useState([]);

@@ -4,6 +4,7 @@ import UserNavbar from '../components/UserNavbar';
 import OffersTable from '../components/OffersTable';
 import Footer from '../components/Footer';
 import { getAll } from '../services/TicketOfferService';
+import '../css/stretchedPage.css';
 
 const Offers = () => {
     const [ticketOffers, setTicketOffers] = useState([]);

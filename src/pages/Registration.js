@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Navbar from '../components/Navbar';
 import Alert from '../components/Alert';
 import Footer from '../components/Footer';
-import { register } from '../services/UserService';
+import { register } from '../services/AuthService';
 import '../css/registration.css';
 
 const Registration = () => {
@@ -15,7 +15,7 @@ const Registration = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const newUser = { firstName, lastName, email, password };
+            const newUser = { firstName, lastName, email, hashedPassword:password };
             await register(newUser);
             setAlert({ type: 'success', message: 'Registration successful' });
         } catch (error) {
@@ -25,7 +25,7 @@ const Registration = () => {
 
     return (
         <div id="page">
-            <Navbar />
+            <Navbar></Navbar>
             <div className="form-frame">
                 <div className="form-style" style={{ width: '500px' }}>
                     <div className="form-style-heading">Zarejestruj się</div>
