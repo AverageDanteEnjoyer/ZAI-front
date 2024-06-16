@@ -18,6 +18,7 @@ const Registration = () => {
             const newUser = { firstName, lastName, email, hashedPassword:password };
             await register(newUser);
             setAlert({ type: 'success', message: 'Registration successful' });
+            window.location.href = '/login';
         } catch (error) {
             setAlert({ type: 'error', message: 'Registration failed' });
         }
