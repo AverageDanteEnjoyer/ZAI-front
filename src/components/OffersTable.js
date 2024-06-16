@@ -35,7 +35,7 @@ const OffersTable = ({ ticketOffers, handleAddToCart }) => {
                                         style={isItemInCart(id) ? { opacity: 0.15, pointerEvents: 'none' } : {}}
                                         onClick={() => handleAddToCart(id)}
                                     >
-                                        <img className="x-button" src="/Bileteo/assets/cart-icon.svg" alt="Add to cart" />
+                                        <img className="x-button" src="/assets/cart-icon.svg" alt="Add to cart" />
                                     </a>
                                 </td>
                             </tr>

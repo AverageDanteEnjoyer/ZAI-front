@@ -40,7 +40,7 @@ const CartTable = ({ ticketOffers, handleRemove }) => {
                                 </td>
                                 <td className="cell-item actions">
                                     <a className="x-button-wrapper" onClick={() => handleRemove(id)}>
-                                        <img className="x-button" src="/Bileteo/assets/x.png" alt="Remove" />
+                                        <img className="x-button" src="/assets/x.png" alt="Remove" />
                                     </a>
                                 </td>
                             </tr>

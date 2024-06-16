@@ -24,7 +24,6 @@ const Offers = () => {
 
     const handleAddToCart = (id) => {
         document.cookie = `cart-item-${id}=true; path=/`;
-        // Optionally trigger a re-render to update the button state
         setTicketOffers([...ticketOffers]);
     };
 
