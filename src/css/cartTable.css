@@ -1,0 +1,101 @@
+#table-container {
+    height: 420px;
+    overflow-y: auto;
+    font-family: 'Aller-Light', sans-serif;
+    font-weight: bolder;
+    margin-bottom: 30px;
+    border: 2px solid #E3E3E4FF;
+    padding-bottom: 20px;
+}
+
+.grid-header {
+    flex: 100%;
+    text-align: center;
+    font-family: 'Aller', sans-serif;
+    font-size: 26px;
+    font-weight: normal;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+#virtual-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#virtual-table th, #virtual-table td {
+    padding: 8px;
+}
+
+#virtual-table th {
+    width: 21.25%;
+    text-align: center;
+}
+
+th.actions {
+    width: 15%;
+}
+
+.actions {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+}
+
+thead {
+    position: sticky;
+    top: 0;
+    background-color: white;
+    box-shadow: inset 0 -2px 0 #E3E3E4FF;
+}
+
+.edit-field {
+    width: 100%;
+    font-family: 'Aller-Light', sans-serif;
+    font-weight: normal;
+    font-size: 17px;
+    text-align: center;
+    border: none;
+}
+
+.date-field {
+    font-size: 14px;
+}
+
+.x-button-wrapper{
+    height: 30%;
+    width: 30%;
+    margin-right: 55%;
+}
+
+.x-button {
+    height: 100%;
+    width: 100%;
+}
+
+.finalize {
+    font-family: 'Aller-Light', sans-serif;
+    font-weight: normal;
+    display: flex;
+    justify-content: center;
+    width: 95%;
+    gap: 1.5%;
+    margin-bottom: 1.5%;
+}
+
+.finalize .input-field {
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    font-family: 'Aller-Light', sans-serif;
+    font-size: 17px;
+    text-align: center;
+}
+
+.total {
+    font-family: 'Aller-Light', sans-serif;
+    width: 95%;
+    text-align: right;
+    align-self: flex-end;
+    font-weight: bolder;
+}

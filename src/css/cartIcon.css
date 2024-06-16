@@ -1,0 +1,29 @@
+.cart-container {
+    width: 3%;
+    height: 100%;
+    position: relative;
+}
+
+.cart-button {
+    position: absolute;
+    width: 39px;
+    height: 39px;
+    top: 24%;
+    left: 0;
+}
+
+.circle {
+    position: absolute;
+    right: 0%;
+    bottom: 20%;
+
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    padding: 2px;
+
+    background: red;
+    color: white;
+    text-align: center;
+    font: 16px Arial, sans-serif;
+}
