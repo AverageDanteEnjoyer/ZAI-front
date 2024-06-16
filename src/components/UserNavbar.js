@@ -1,6 +1,7 @@
 import React from 'react';
 import CartIcon from './CartIcon';
 import '../css/navbar.css';
+import {logout} from "../services/AuthService";
 
 const UserNavbar = () => {
     const cartItemsCount = () => {
@@ -21,18 +22,18 @@ const UserNavbar = () => {
             <div id="top-divider"></div>
             <ol id="navigation">
                 <li className="logo">
-                    <a className="logo-image" href="/"></a>
+                    <a className="logo-image" href="/user-home"></a>
                 </li>
                 {user && user.isAdmin ? (
                     <li className="nav-item"><a href="/edit-offers">Edytuj oferty</a></li>
                 ) : (
                     <>
                         <li className="nav-item"><a href="/offers">Oferty</a></li>
-                        <li className="nav-item"><a href="/tickets">Moje bilety</a></li>
+                        <li className="nav-item"><a href="/user-tickets">Moje bilety</a></li>
                         <CartIcon cartItemsCount={cartItemsCount()} />
                     </>
                 )}
-                <li className="nav-item highlighted-nav-item"><a href="/logout">Wyloguj się</a></li>
+                <li className="nav-item highlighted-nav-item"><div onClick={logout}>Wyloguj się</div></li>
             </ol>
         </div>
     );
